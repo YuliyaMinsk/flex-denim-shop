@@ -314,7 +314,7 @@ a {
   top: -30px;
   width: 470px;
   height: 462px;
-  background-image: url("../img/svg/sm-square-news.svg");
+  background-image: url("./img/svg/sm-square-news.svg");
   z-index: -1;
 }
 
@@ -494,7 +494,7 @@ a {
   bottom: 0;
   width: 178px;
   height: 135px;
-  background-image: url("../img/svg/sm-square-catalog-left.svg");
+  background-image: url("./img/svg/sm-square-catalog-left.svg");
 }
 
 .catalog-promo__second-column::after {
@@ -504,7 +504,7 @@ a {
   top: 0;
   width: 232px;
   height: 176px;
-  background-image: url("../img/svg/sm-square-catalog-right.svg");
+  background-image: url("./img/svg/sm-square-catalog-right.svg");
 }
 
 .filter {
@@ -520,7 +520,7 @@ a {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background: url("../img/svg/filter-arrow.svg") no-repeat 205px, center;
+  background: url("./img/svg/filter-arrow.svg") no-repeat 205px, center;
 }
 
 .catalog-all__list {
@@ -636,7 +636,7 @@ progress[value]::-webkit-progress-value {
   line-height: 0;
   cursor: pointer;
   background-color: transparent;
-  background-image: url("../img/svg/arrow-left.svg");
+  background-image: url("./img/svg/arrow-left.svg");
   background-repeat: no-repeat;
   padding: 0;
   border: none;
@@ -653,7 +653,7 @@ progress[value]::-webkit-progress-value {
   line-height: 0;
   cursor: pointer;
   background-color: transparent;
-  background-image: url("../img/svg/arrow-right.svg");
+  background-image: url("./img/svg/arrow-right.svg");
   background-repeat: no-repeat;
   padding: 0;
   border: none;

@@ -1,0 +1,679 @@
+// MIXINS ///////////////////////////////////////////////////////////////////////////
+
+// FONTS ////////////////////////////////////////////////////////////////////////////
+// 100-thin, 300-light, 400-regular, 500-medium, 700-bold, 800-extra bold, 900-black 
+// &display=swap&subset=cyrillic-ext
+
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;700;800&display=swap");
+
+// ICON FONTS ///////////////////////////////////////////////////////////////////////
+
+// DEFAULT FONT /////////////////////////////////////////////////////////////////////
+
+$fontFamily: "Work Sans"
+
+// VARIABLES ////////////////////////////////////////////////////////////////////////
+
+$minWidth: 320px
+$maxWidth: 1366px
+$maxWithContainer: 1170px
+$md1: $maxWithContainer + 12
+$md2: 991.98
+$md3: 767.98
+$md4: 479.98
+
+// GENERAL PARAMETERS ///////////////////////////////////////////////////////////////
+
+body
+    margin: 0
+    min-width: $md1 // to change when add dynamic
+    font-family: $fontFamily, "Arial", sans-serif
+    font-style: normal
+    font-weight: 500
+    font-size: 16px
+    line-height: 19px
+    color: #151c22
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li
+    margin: 0
+
+ul[class],
+ol[class] 
+  padding: 0
+  list-style: none
+
+a
+    color: inherit
+    text-decoration: none
+
+._container // For all sections with fixed width
+    width: $maxWithContainer
+    margin: 0 auto
+ 
+.hidden
+    position: absolute
+    clip: rect(1px, 1px, 1px, 1px)
+    padding: 0
+    border: 0
+    height: 1px
+    width: 1px
+    overflow: hidden
+
+.button
+    min-width: 200px
+    padding: 27px 24px
+    color: #FFFFFF
+    background-color: #151C22
+    font-weight: 700 // = bold
+    font-size: 16px
+    line-height: 10px
+    cursor: pointer
+
+// HEADER ///////////////////////////////////////////////////////////////////////////    
+
+.header__content
+    display: flex
+    align-items: flex-end
+
+.menu-logo__link
+    margin: 0 auto
+    padding-top: 25px
+    padding-bottom: 25px
+ 
+.menu-main__list
+    width: 400px
+    padding: 0
+    margin: 0
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    flex-wrap: wrap
+
+.menu-main__item
+    padding-right: 35px
+    padding-top: 25px
+    padding-bottom: 25px
+
+.menu-user__list
+    width: 400px
+    padding: 0
+    margin: 0
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    flex-wrap: wrap
+
+.menu-user__item
+    padding-left: 35px  
+    padding-top: 25px
+    padding-bottom: 25px  
+    
+// PROMO ////////////////////////////////////////////////////////////////////////////
+
+.promo
+    background-color: #F1F2F4
+
+.promo__content
+    display: flex    
+
+.promo__first-column
+    width: 520px
+
+.promo__tagline
+    margin-top: 192px
+    margin-left: 170px
+    color: #727A82
+    font-size: 18px
+    line-height: 21px
+
+.promo__title
+    margin-left: 167px
+    font-family: Anton, "Arial", sans-serif
+    color: #161718
+    font-size: 128px
+    line-height: 150px
+    text-transform: uppercase
+
+.promo__button
+    margin-top: 35px
+    margin-left: 170px
+
+.promo__link
+    display: block
+    margin-top: 70px
+    margin-bottom: 50px
+
+.promo__second-column
+    width: 430px 
+    padding: 50px
+
+.promo__second-column
+    position: relative
+
+.promo-collection__image
+    position: relative
+    z-index: 1
+
+.promo__second-column::before
+    content: ""      
+    position: absolute
+    left: 0
+    top: 0
+    width: 232px
+    height: 176px
+    background-image: url('../img/svg/sm-square-left.svg')
+
+.promo__second-column::after
+    content: ""      
+    position: absolute
+    right: 0
+    bottom: 0
+    width: 232px
+    height: 176px
+    background-image: url('../img/svg/sm-square-right.svg')
+
+
+// BESTSELLERS //////////////////////////////////////////////////////////////////////
+
+.bestsellers
+    padding-top: 130px
+    padding-bottom: 105px
+
+.section__header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 70px
+
+.section__title
+    font-size: 32px
+    line-height: 38px
+
+.section__link
+    font-size: 18px
+    line-height: 25px
+    padding: 0 5px
+    border-bottom: 2px solid black
+
+.catalog__list
+    padding: 0
+    margin: 0
+    display: flex
+    justify-content: flex-start
+    flex-wrap: wrap
+
+.catalog__item
+    width: 270px
+    margin-right: 30px
+
+.catalog__item:nth-child(4n)
+    margin-right: 0
+
+.catalog__link
+    display: flex
+    flex-direction: column
+
+.catalog__title
+    margin-top: 25px
+    font-weight: 500 // = medium
+    font-size: 18px
+    line-height: 21px
+
+.catalog__image
+    order: -1
+
+.catalog__price
+    margin-top: 6px
+    font-weight: 700 // = bold
+
+// NEWS /////////////////////////////////////////////////////////////////////////////
+
+.news
+    margin-bottom: 109px
+
+.news__content
+    display: flex
+    flex-direction: row-reverse
+    justify-content: flex-end
+
+.news__first-column
+    position: relative
+    display: flex
+    flex-direction: column
+    width: 400px
+    margin-top: 31px
+    margin-bottom: 34px
+    background-color: #F1F2F4
+
+.news__first-column::before
+    content: ""      
+    position: absolute
+    left: 0
+    top: -30px
+    width: 470px
+    height: 462px
+    background-image: url('../img/svg/sm-square-news.svg')
+    z-index: -1
+
+.news__second-column
+    width: 700px
+
+.news__title
+    margin-top: 52px
+    margin-left: 43px
+    font-size: 24px 
+    line-height: 28px
+
+.news__date
+    margin-top: 27px
+    margin-left: 43px
+    font-size: 18px
+    line-height: 21px
+
+.news__article
+    margin-top: 13px
+    margin-left: 43px
+    margin-right: 45px
+    font-size: 18px
+    line-height: 21px
+    color: #727A82
+
+.news__button
+    margin-top: 24px
+    margin-left: 43px
+    margin-bottom: 28px
+    align-self: flex-start
+
+
+// SHOP BY CATEGORY /////////////////////////////////////////////////////////////////
+
+.categories
+    margin-bottom: 130px
+
+// FOOTER ///////////////////////////////////////////////////////////////////////////
+
+.footer
+    background-color: #151C22
+    color: #FFFFFF
+
+.footer__menu
+    font-size: 18px
+    line-height: 21px
+
+.footer__content
+    display: flex
+    flex-direction: column
+    padding: 50px 0 50px
+
+.footer__link
+    margin: 0 auto
+
+.footer__menu
+    display: flex
+    justify-content: center
+
+.footer__item
+    margin-top: 35px
+    margin-right: 35px
+
+.footer__item:nth-last-child(1)
+    margin-right: 0
+
+.footer__social
+    display: flex
+    justify-content: center
+
+/////////////////////////////////////////////////////////////////////////////////////
+// CATALOG.HTML /////////////////////////////////////////////////////////////////////
+
+// CATALOG - PROMO //////////////////////////////////////////////////////////////////
+
+.catalog-promo
+    background-color: #F1F2F4
+
+.catalog-promo__content
+    display: flex   
+    align-items: flex-start 
+
+.catalog-promo__first-column
+    width: 400px
+    padding-top: 70px
+    padding-left: 200px
+    display: flex 
+    flex-direction: column
+
+.page-header
+    width: 270px
+    margin-top: 20px
+    color: #151C22
+    font-size: 32px
+    line-height: 35px
+
+.catalog-promo .breadcrumbs__list
+    order: -1
+    display: flex
+    flex-wrap: wrap
+
+    color: #727A82
+    font-size: 18px
+    line-height: 21px
+
+.breadcrumbs__item 
+    color: #727a82
+
+.breadcrumbs__item:not(:nth-last-child(1))::after
+    content: "/"
+    margin-left: 15px
+    margin-right: 15px   
+
+.current
+    color: #151C22
+
+.catalog-promo__second-column
+    width: 300px 
+    position: relative
+    display: flex   
+    align-items: flex-start 
+
+.catalog-promo-collection__image
+    position: relative
+    z-index: 1
+
+.catalog-promo__second-column::before
+    content: ""      
+    position: absolute
+    left: -30px
+    bottom: 0
+    width: 178px
+    height: 135px
+    background-image: url('../img/svg/sm-square-catalog-left.svg')
+
+.catalog-promo__second-column::after
+    content: ""      
+    position: absolute
+    right: -30px
+    top: 0
+    width: 232px
+    height: 176px
+    background-image: url('../img/svg/sm-square-catalog-right.svg')
+
+// CATALOG ALL //////////////////////////////////////////////////////////////////
+
+.filter
+    display: block
+    margin-top: 40px
+    margin-left: auto
+    padding: 15px
+    width: 243px 
+
+    border: 2px solid #151C22
+    font-weight: 500 // = medium
+    font-size: 18px
+    line-height: 21px
+
+    appearance: none
+    background: url('../img/svg/filter-arrow.svg') no-repeat 205px, center
+    
+.catalog-all__list
+    display: flex
+    flex-wrap: wrap
+
+.catalog-all__item
+    margin-top: 40px
+    margin-right: 66px
+
+.catalog-all__item:nth-child(4n)
+    margin-right: 0
+
+.catalog-all__link
+    display: flex
+    flex-direction: column
+
+.catalog-all__title
+    margin-top: 25px
+    font-weight: 500 // = medium
+    font-size: 18px
+    line-height: 21px
+
+.catalog-all__price
+    margin-top: 6px
+    font-weight: 700 // = bold
+
+.catalog-all__image
+    order: -1
+
+.slider
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding-bottom: 130px
+
+.catalog-all__slider
+    margin-top: 83px
+    font-size: 18px
+    line-height: 21px
+
+progress[value]
+    margin-top: 5px
+    appearance: none
+    border: none
+    width: 200px
+    height: 2px
+    background-color: #E5E5E5
+    border-radius: 2px
+
+progress[value]::-webkit-progress-bar
+    background-color: #E5E5E5
+    border-radius: 2px
+
+progress[value]::-webkit-progress-value 
+    background-color: #151C22
+    border-radius: 2px
+
+.catalog-all__button
+    margin-top: 40px
+
+/////////////////////////////////////////////////////////////////////////////////////
+// CARD.HTML ////////////////////////////////////////////////////////////////////////
+
+// CARD /////////////////////////////////////////////////////////////////////////////
+
+.card
+    background-image: linear-gradient(to right, #ffffff 50%, #f1f2f4 50%)
+    margin-top: 55px
+
+.card__content
+    display: flex
+
+.slider__left-button
+    position: relative
+    top: -450px
+    left: -65px
+
+    width: 12px
+    height: 23px
+    font-size: 0
+    line-height: 0
+    cursor: pointer
+    background-color: transparent
+    background-image: url('../img/svg/arrow-left.svg')
+    background-repeat: no-repeat
+    padding: 0
+    border: none
+    outline: 0
+
+.slider__right-button
+    position: relative
+    top: -450px
+    left: 430px
+
+    width: 12px
+    height: 23px
+    font-size: 0
+    line-height: 0
+    cursor: pointer
+    background-color: transparent
+    background-image: url('../img/svg/arrow-right.svg')
+    background-repeat: no-repeat
+    padding: 0
+    border: none
+    outline: 0
+
+
+.card__images
+    width: 530px
+    margin-left: 70px
+
+.card__image
+    width: 400px
+    margin-bottom: 20px
+
+.card__small-images
+    width: 400px
+    display: flex
+    justify-content: space-between
+
+.card__options
+    width: 370px
+    padding-left: 70px
+    padding-top: 70px
+    color: #151C22
+
+.card__title
+    font-size: 32px
+    line-height: 38px
+    font-weight: 700 // = bold
+
+.card__desc
+    margin-top: 35px
+
+.form__order
+    margin-top: 40px
+
+.form__color
+    display: flex
+    border: none
+    padding: 0
+    margin: 0
+    font-size: 18px
+    line-height: 21px
+    margin-top: 40px
+
+input[type="radio"] // Make radio button invisible
+    position: absolute
+    z-index: -1
+    opacity: 0
+    padding: 0
+    margin: 0
+
+.label-hidden
+    margin-top: 15px
+    margin-left: 3px
+    margin-right: 25px
+    font-size: 0
+    line-height: 0
+
+.label-hidden::before
+    content: ''
+    display: inline-block
+    padding: 0
+    margin: 0
+    border: 0
+    width: 22px
+    height: 22px
+
+.color-lightblue::before
+    content: ''
+    background-image: url('../img/svg/radio-lightblue.svg')
+    background-repeat: no-repeat
+    background-position: center center
+
+.label-hidden.color-blue::before
+    content: ''
+    background-image: url('../img/svg/radio-blue.svg')
+    background-repeat: no-repeat
+    background-position: center center
+
+.label-hidden.color-gray::before
+    content: ''
+    background-image: url('../img/svg/radio-gray.svg')
+    background-repeat: no-repeat
+    background-position: center center
+
+.label-hidden.checked::before
+    content: ''
+    border: 1px solid #B0C3C7
+    border-radius: 50px
+
+
+.form__size
+    display: flex
+    border: none
+    padding: 0
+    margin: 0
+    margin-top: 35px
+    font-size: 18px
+    line-height: 21px   
+    color: #151C22
+
+.form__size>label
+    margin-top: 20px
+    margin-right: 20px
+    color: #727A82 
+
+.form__size>label.checked
+    color: #151C22
+
+.form__price
+    margin-top: 30px
+    font-size: 18px
+    line-height: 21px
+    font-weight: 700 // = bold
+
+.form__button
+    margin-top: 40px
+
+
+// SIMILAR //////////////////////////////////////////////////////////////////////////
+
+.similar
+    padding-top: 130px
+    padding-bottom: 105px
+
+.similar__list
+    padding: 0
+    margin: 0
+    display: flex
+    justify-content: flex-start
+    flex-wrap: wrap
+
+.similar__item
+    width: 270px
+    margin-right: 30px
+
+.similar__item:nth-child(4n)
+    margin-right: 0
+
+.similar__link
+    display: flex
+    flex-direction: column
+
+.similar__title
+    margin-top: 25px
+    font-weight: 500 // = medium
+    font-size: 18px
+    line-height: 21px
+
+.similar__image
+    order: -1
+
+.similar__price
+    margin-top: 6px
+    font-weight: 700 // = bold
